@@ -16,9 +16,9 @@ public class Bullet : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.transform.tag != "Bullet")
+        if (other.transform.tag != "Bullet")
         {
             Destroy(this.gameObject);
         }

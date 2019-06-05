@@ -22,21 +22,27 @@ public class Lucifer : MonoBehaviour
     private void Update()
     {
         fireClock += Time.deltaTime;
-        inputX = Input.GetAxis("Horizontal");
-        inputY = Input.GetAxis("Vertical");
+        inputX = Input.GetAxisRaw("Horizontal");
+        inputY = Input.GetAxisRaw("Vertical");
+        transform.rotation = Quaternion.identity;
 
         if (inputX > 0)
         {
             if (transform.position.x < bounds.position.x + bounds.localScale.x / 2)
             {
                 transform.position = new Vector3(transform.position.x + inputX * speedX * Time.deltaTime, transform.position.y, 0f);
+                transform.rotation = Quaternion.Euler(0f, -40f, 0f);
             }
         }
         else
         {
-            if (transform.position.x > bounds.position.x - bounds.localScale.x / 2)
+            if (inputX < 0)
             {
-                transform.position = new Vector3(transform.position.x + inputX * speedX * Time.deltaTime, transform.position.y, 0f);
+                if (transform.position.x > bounds.position.x - bounds.localScale.x / 2)
+                {
+                    transform.position = new Vector3(transform.position.x + inputX * speedX * Time.deltaTime, transform.position.y, 0f);
+                    transform.rotation = Quaternion.Euler(0f, 40f, 0f);
+                }
             }
         }
 
