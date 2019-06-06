@@ -22,8 +22,8 @@ public class Lucifer : MonoBehaviour
     private void Update()
     {
         fireClock += Time.deltaTime;
-        inputX = Input.GetAxisRaw("Horizontal");
-        inputY = Input.GetAxisRaw("Vertical");
+        inputX = Input.GetAxis("Horizontal");
+        inputY = Input.GetAxis("Vertical");
         transform.rotation = Quaternion.identity;
 
         if (inputX > 0)
