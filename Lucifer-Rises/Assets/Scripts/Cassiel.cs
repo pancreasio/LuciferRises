@@ -6,10 +6,15 @@ public class Cassiel : MonoBehaviour
 {
     public int maxHp;
     private int hp;
+    public float fireRate;
+    private float fireClock;
+    public GameObject bullet;
+    public Transform cannon;
 
     private void Start()
     {
         hp = maxHp;
+        fireClock = 0;
     }
 
     private void Update()
@@ -17,6 +22,12 @@ public class Cassiel : MonoBehaviour
         if (hp <= 0)
         {
             Explode();
+        }
+
+        if (fireClock > fireRate)
+        {
+            Fire();
+            fireClock = 0;
         }
     }
 
@@ -31,6 +42,11 @@ public class Cassiel : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {        
         Explode();
+    }
+
+    private void Fire()
+    {
+        Instantiate(bullet, cannon.position, Quaternion.identity);
     }
 
     private void Explode()

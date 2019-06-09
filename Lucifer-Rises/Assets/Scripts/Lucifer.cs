@@ -16,7 +16,7 @@ public class Lucifer : MonoBehaviour
         cannon2 = GameObject.Find("Cannon2").transform;
         cannon3 = GameObject.Find("Cannon3").transform;
         cannon4 = GameObject.Find("Cannon4").transform;
-        fireClock = 0;
+        fireClock = fireRate;
         hp = maxHP;
     }
 
