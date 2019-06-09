@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Lucifer : MonoBehaviour
 {
-    public float speedX, speedY, fireRate;
-    private float inputX, inputY, fireClock;
+    public float speedX, speedY, fireRate, maxHP;
+    private float inputX, inputY, fireClock, hp;
     public GameObject bullet;
     private Transform bounds, cannon1, cannon2, cannon3, cannon4;
 
@@ -17,6 +17,7 @@ public class Lucifer : MonoBehaviour
         cannon3 = GameObject.Find("Cannon3").transform;
         cannon4 = GameObject.Find("Cannon4").transform;
         fireClock = 0;
+        hp = maxHP;
     }
 
     private void Update()
@@ -64,6 +65,7 @@ public class Lucifer : MonoBehaviour
         if (Input.GetKey(KeyCode.H) && fireClock > fireRate)
         {
             Fire();
+            fireClock = 0f;
         }
     }
 
@@ -73,5 +75,13 @@ public class Lucifer : MonoBehaviour
         Instantiate(bullet, cannon2.position, Quaternion.identity);
         Instantiate(bullet, cannon3.position, Quaternion.identity);
         Instantiate(bullet, cannon4.position, Quaternion.identity);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.transform.tag == "Enemy Bullet")
+        {
+            hp--;
+        }
     }
 }

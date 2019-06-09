@@ -121,7 +121,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 148440484}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cannon3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,7 +151,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 361773172}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cannon2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -190,9 +190,9 @@ GameObject:
   - component: {fileID: 433250899}
   - component: {fileID: 433250902}
   - component: {fileID: 433250901}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cassiel
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -219,7 +219,7 @@ Transform:
   m_GameObject: {fileID: 433250898}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.006, y: 1.159, z: 0}
-  m_LocalScale: {x: 1.4441, y: 1.4441, z: 1.4441}
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
   m_Children:
   - {fileID: 1493209417}
   m_Father: {fileID: 0}
@@ -297,15 +297,15 @@ MonoBehaviour:
   volumeTrigger: {fileID: 519420032}
   volumeLayer:
     serializedVersion: 2
-    m_Bits: 1
-  stopNaNPropagation: 1
+    m_Bits: 256
+  stopNaNPropagation: 0
   finalBlitToCameraTarget: 1
-  antialiasingMode: 1
+  antialiasingMode: 2
   temporalAntialiasing:
-    jitterSpread: 0.75
-    sharpness: 0.25
-    stationaryBlending: 0.95
-    motionBlending: 0.85
+    jitterSpread: 1
+    sharpness: 3
+    stationaryBlending: 0.99
+    motionBlending: 0.99
   subpixelMorphologicalAntialiasing:
     quality: 2
   fastApproximateAntialiasing:
@@ -411,7 +411,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sharedProfile: {fileID: 11400000, guid: f1e326ffa8c239c4c88fea211d0b68ed, type: 2}
-  isGlobal: 0
+  isGlobal: 1
   blendDistance: 0
   weight: 1
   priority: 0
@@ -426,17 +426,33 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cassiel Model
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4d47f2219607e56409aa28dfa45660b0, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 4d47f2219607e56409aa28dfa45660b0, type: 3}
       propertyPath: m_Name
       value: Chasis
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 4d47f2219607e56409aa28dfa45660b0, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: 4d47f2219607e56409aa28dfa45660b0, type: 3}
       propertyPath: m_Name
       value: Proppeller R
       objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 4d47f2219607e56409aa28dfa45660b0, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 100006, guid: 4d47f2219607e56409aa28dfa45660b0, type: 3}
       propertyPath: m_Name
       value: Proppeller L
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: 4d47f2219607e56409aa28dfa45660b0, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4d47f2219607e56409aa28dfa45660b0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -495,6 +511,82 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lucifer Model
       objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: 0f6637cba88e84e4e891cd115196085f, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 0f6637cba88e84e4e891cd115196085f, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 0f6637cba88e84e4e891cd115196085f, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 0f6637cba88e84e4e891cd115196085f, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: 0f6637cba88e84e4e891cd115196085f, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: 0f6637cba88e84e4e891cd115196085f, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100012, guid: 0f6637cba88e84e4e891cd115196085f, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100014, guid: 0f6637cba88e84e4e891cd115196085f, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100016, guid: 0f6637cba88e84e4e891cd115196085f, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100018, guid: 0f6637cba88e84e4e891cd115196085f, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100020, guid: 0f6637cba88e84e4e891cd115196085f, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100022, guid: 0f6637cba88e84e4e891cd115196085f, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100024, guid: 0f6637cba88e84e4e891cd115196085f, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100026, guid: 0f6637cba88e84e4e891cd115196085f, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100028, guid: 0f6637cba88e84e4e891cd115196085f, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100030, guid: 0f6637cba88e84e4e891cd115196085f, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100032, guid: 0f6637cba88e84e4e891cd115196085f, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100034, guid: 0f6637cba88e84e4e891cd115196085f, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 100036, guid: 0f6637cba88e84e4e891cd115196085f, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: 0f6637cba88e84e4e891cd115196085f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -551,7 +643,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1059653906}
   - component: {fileID: 1059653905}
-  m_Layer: 0
+  - component: {fileID: 1059653908}
+  - component: {fileID: 1059653907}
+  m_Layer: 8
   m_Name: Lucifer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -572,7 +666,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedX: 6
   speedY: 6
-  fireRate: 0.05
+  fireRate: 0.04
+  maxHP: 0
   bullet: {fileID: 5381549330020722705, guid: 73424946f9a992d48885eedc0e70bdc9, type: 3}
 --- !u!4 &1059653906
 Transform:
@@ -593,6 +688,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &1059653907
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059653904}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 14
+  m_CollisionDetection: 0
+--- !u!65 &1059653908
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059653904}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.05, y: 0.05, z: 0.05}
+  m_Center: {x: 0, y: 0, z: -0.02}
 --- !u!1 &1275544725
 GameObject:
   m_ObjectHideFlags: 0
@@ -602,7 +726,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1275544726}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cannon1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -638,7 +762,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1896539082}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cannon4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
