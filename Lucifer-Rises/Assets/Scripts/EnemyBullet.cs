@@ -11,7 +11,7 @@ public class EnemyBullet : MonoBehaviour
     void Update()
     {
         lifeTime += Time.deltaTime;
-        transform.position = new Vector3(transform.position.x, transform.position.y + speed * Time.deltaTime, transform.position.z);
+        transform.position = new Vector3(transform.position.x, transform.position.y - speed * Time.deltaTime, transform.position.z);
         if (lifeTime > lifespan)
         {
             Destroy(this.gameObject);

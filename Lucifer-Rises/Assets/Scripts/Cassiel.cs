@@ -19,6 +19,8 @@ public class Cassiel : MonoBehaviour
 
     private void Update()
     {
+        fireClock += Time.deltaTime;
+
         if (hp <= 0)
         {
             Explode();

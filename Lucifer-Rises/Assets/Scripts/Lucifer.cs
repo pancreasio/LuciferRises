@@ -7,6 +7,7 @@ public class Lucifer : MonoBehaviour
     public float speedX, speedY, fireRate, maxHP;
     private float inputX, inputY, fireClock, hp;
     public GameObject bullet;
+    public AudioSource fireSound;
     private Transform bounds, cannon1, cannon2, cannon3, cannon4;
 
     private void Start()
@@ -71,6 +72,7 @@ public class Lucifer : MonoBehaviour
 
     private void Fire()
     {
+        fireSound.Play();
         Instantiate(bullet, cannon1.position, Quaternion.identity);
         Instantiate(bullet, cannon2.position, Quaternion.identity);
         Instantiate(bullet, cannon3.position, Quaternion.identity);
