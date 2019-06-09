@@ -703,6 +703,7 @@ MonoBehaviour:
   speedY: 6
   fireRate: 0.04
   maxHP: 0
+  positionOffset: 0.01
   bullet: {fileID: 5381549330020722705, guid: 73424946f9a992d48885eedc0e70bdc9, type: 3}
   fireSound: {fileID: 1059653909}
 --- !u!4 &1059653906

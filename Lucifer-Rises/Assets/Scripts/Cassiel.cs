@@ -48,7 +48,9 @@ public class Cassiel : MonoBehaviour
 
     private void Fire()
     {
-        Instantiate(bullet, cannon.position, Quaternion.identity);
+        GameObject bulletInstance = Instantiate(bullet, cannon.position, Quaternion.identity);
+        bulletInstance.GetComponent<EnemyBullet>().creator = this.gameObject;
+        bulletInstance.GetComponent<EnemyBullet>().shouldDissapearIfParentKilled = true;
     }
 
     private void Explode()

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Lucifer : MonoBehaviour
 {
-    public float speedX, speedY, fireRate, maxHP;
+    public float speedX, speedY, fireRate, maxHP, positionOffset;
     private float inputX, inputY, fireClock, hp;
     public GameObject bullet;
     public AudioSource fireSound;
@@ -35,6 +35,10 @@ public class Lucifer : MonoBehaviour
                 transform.position = new Vector3(transform.position.x + inputX * speedX * Time.deltaTime, transform.position.y, 0f);
                 transform.rotation = Quaternion.Euler(0f, -40f, 0f);
             }
+            else
+            {
+                transform.position = new Vector3(bounds.position.x + bounds.localScale.x / 2 + positionOffset, transform.position.y,0f);
+            }
         }
         else
         {
@@ -45,6 +49,10 @@ public class Lucifer : MonoBehaviour
                     transform.position = new Vector3(transform.position.x + inputX * speedX * Time.deltaTime, transform.position.y, 0f);
                     transform.rotation = Quaternion.Euler(0f, 40f, 0f);
                 }
+                else
+                {
+                    transform.position = new Vector3(bounds.position.x - bounds.localScale.x / 2 - positionOffset, transform.position.y, 0f);
+                }
             }
         }
 
@@ -54,12 +62,20 @@ public class Lucifer : MonoBehaviour
             {
                 transform.position = new Vector3(transform.position.x, transform.position.y + inputY * speedY * Time.deltaTime, 0f);
             }
+            else
+            {
+                transform.position = new Vector3(transform.position.x, bounds.position.y + bounds.localScale.y / 2 + positionOffset, 0f);
+            }
         }
         else
         {
             if (transform.position.y > bounds.position.y - bounds.localScale.y / 2)
             {
                 transform.position = new Vector3(transform.position.x, transform.position.y + inputY * speedY * Time.deltaTime, 0f);
+            }
+            else
+            {
+                transform.position = new Vector3(transform.position.x, bounds.position.y - bounds.localScale.y / 2 - positionOffset, 0f);
             }
         }
 
