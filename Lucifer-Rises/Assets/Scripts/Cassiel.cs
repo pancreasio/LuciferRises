@@ -66,7 +66,10 @@ public class Cassiel : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Explode();
+        if (collision.transform.tag == "Player")
+        {
+            Explode();
+        }
     }
 
     private void Fire()

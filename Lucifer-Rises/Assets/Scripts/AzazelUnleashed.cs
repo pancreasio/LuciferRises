@@ -21,8 +21,8 @@ public class AzazelUnleashed : MonoBehaviour
             Explode();
         }
 
-        transform.LookAt(target);
-        transform.position += transform.forward * speed * Time.deltaTime;
+        transform.right = target.position - transform.position;
+        transform.position += transform.right * speed * Time.deltaTime;
     }
 
     private void Explode()
@@ -35,6 +35,14 @@ public class AzazelUnleashed : MonoBehaviour
         if (collision.transform.tag == "Player")
         {
             Explode();
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.transform.tag == "Bullet")
+        {
+            hp--;
         }
     }
 }
