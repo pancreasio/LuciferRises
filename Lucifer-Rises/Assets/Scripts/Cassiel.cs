@@ -10,6 +10,7 @@ public class Cassiel : MonoBehaviour
     private float fireClock;
     public GameObject bullet;
     public Transform cannon;
+    public List<Transform> waypoints;
 
     private void Start()
     {
