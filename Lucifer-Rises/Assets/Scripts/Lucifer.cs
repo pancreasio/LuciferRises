@@ -95,9 +95,10 @@ public class Lucifer : MonoBehaviour
         Instantiate(bullet, cannon4.position, Quaternion.identity);
     }
 
-    private void OnTriggerEnter(Collider other)
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.transform.tag == "Enemy Bullet")
+        if (collision.transform.tag == "Enemy Bullet")
         {
             hp--;
         }

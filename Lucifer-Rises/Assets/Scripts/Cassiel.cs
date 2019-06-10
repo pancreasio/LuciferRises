@@ -54,15 +54,17 @@ public class Cassiel : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.transform.tag == "Bullet")
+        if (collision.transform.tag == "Bullet")
         {
             hp--;
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         Explode();
     }

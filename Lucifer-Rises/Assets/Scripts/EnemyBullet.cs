@@ -24,9 +24,9 @@ public class EnemyBullet : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.transform.tag == "Player")
+        if (collision.transform.tag == "Player")
         {
             Destroy(this.gameObject);
         }
