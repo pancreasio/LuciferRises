@@ -70,6 +70,10 @@ public class Cassiel : MonoBehaviour
         {
             Explode();
         }
+        else
+        {
+            Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>());
+        }
     }
 
     private void Fire()

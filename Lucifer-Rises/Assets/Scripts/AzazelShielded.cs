@@ -44,6 +44,10 @@ public class AzazelShielded : MonoBehaviour
         {
             Explode();
         }
+        else
+        {
+            Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>());
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -56,7 +60,8 @@ public class AzazelShielded : MonoBehaviour
 
     private void Explode()
     {
-        Instantiate(unleashedForm, transform.position, Quaternion.identity);
+        GameObject unleashedInstance = Instantiate(unleashedForm, transform.position, Quaternion.identity);
+        unleashedInstance.GetComponent<AzazelUnleashed>().target = playerTransform;
         Destroy(this.gameObject);
     }
 }
