@@ -8,7 +8,7 @@ public class Lucifer : MonoBehaviour
     private float inputX, inputY, fireClock, hp;
     public GameObject bullet;
     public AudioSource fireSound;
-    private Transform bounds, cannon1, cannon2, cannon3, cannon4;
+    private Transform bounds, cannon1, cannon2, cannon3, cannon4, droneCannon1, droneCannon2;
 
     private void Start()
     {
@@ -17,6 +17,8 @@ public class Lucifer : MonoBehaviour
         cannon2 = GameObject.Find("Cannon2").transform;
         cannon3 = GameObject.Find("Cannon3").transform;
         cannon4 = GameObject.Find("Cannon4").transform;
+        droneCannon1 = GameObject.Find("Drone Cannon1").transform;
+        droneCannon2 = GameObject.Find("Drone Cannon2").transform;
         fireClock = fireRate;
         hp = maxHP;
     }
@@ -37,7 +39,7 @@ public class Lucifer : MonoBehaviour
             }
             else
             {
-                transform.position = new Vector3(bounds.position.x + bounds.localScale.x / 2 + positionOffset, transform.position.y,0f);
+                transform.position = new Vector3(bounds.position.x + bounds.localScale.x / 2 + positionOffset, transform.position.y, 0f);
             }
         }
         else
@@ -93,6 +95,8 @@ public class Lucifer : MonoBehaviour
         Instantiate(bullet, cannon2.position, Quaternion.identity);
         Instantiate(bullet, cannon3.position, Quaternion.identity);
         Instantiate(bullet, cannon4.position, Quaternion.identity);
+        Instantiate(bullet, droneCannon1.position, Quaternion.identity);
+        Instantiate(bullet, droneCannon2.position, Quaternion.identity);
     }
 
 
