@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3776971327449148752
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3776971327449148758}
+  - component: {fileID: 3776971327449148753}
+  m_Layer: 0
+  m_Name: Circle Wave
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3776971327449148758
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3776971327449148752}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3776971327449148753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3776971327449148752}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 357632231fe2ede49ad032eb566d7fde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyCant: 4
+  enemyDelay: 0.9
+  enemySpeed: 1
+  enemyAggression: 0.7
+  actualWaypoints: []
+  waypointNames:
+  - 11
+  - 20
+  - 31
+  - 22
+  - 11
+  - 20
+  - 31
+  - 22
+  - 11
+  - 20
+  - 31
+  spawnPointName: 01
+  endPointName: 41
+  cassiel: {fileID: 246338694213005708, guid: 9b455a1a60e169943ba7d2d0c989cee6, type: 3}
+  waypoints: {fileID: 0}
+  spawnPoints: {fileID: 0}
+  spawnPoint: {fileID: 0}
+  endPoint: {fileID: 0}

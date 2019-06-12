@@ -15,6 +15,8 @@ public class Wave : MonoBehaviour
     public string spawnPointName, endPointName;
     public GameObject cassiel, waypoints, spawnPoints;
     public Transform spawnPoint, endPoint;
+    public bool inverted = false;
+    private bool listAcquired = false, spawnAcquired = false, endAcquired = false, isInverted = false;
 
 
     private void Start()
@@ -33,15 +35,8 @@ public class Wave : MonoBehaviour
 
     private void Update()
     {
-        delayClock += Time.deltaTime;
-
-        if (delayClock > enemyDelay && spawnedEnemies < enemyCant)
-        {
-            SpawnEnemy(spawnPoint, endPoint, actualWaypoints, enemyAggression, enemySpeed);
-            spawnedEnemies++;
-            delayClock = 0f;
-        }
-        if (waypointNames != null)
+        
+        if (waypointNames != null && !listAcquired)
         {
             actualWaypoints.Clear();
             for (int i = 0; i < waypointNames.Count; i++)
@@ -55,8 +50,9 @@ public class Wave : MonoBehaviour
                     }
                 }
             }
+            listAcquired = true;
         }
-        if (spawnPointName != null)
+        if (spawnPointName != null && !spawnAcquired)
         {
             for (int i = 0; i < spawnPointList.Count; i++)
             {
@@ -66,9 +62,10 @@ public class Wave : MonoBehaviour
                     i = spawnPointList.Count;
                 }
             }
+            spawnAcquired = true;
         }
 
-        if (endPointName != null)
+        if (endPointName != null && !endAcquired)
         {
             for (int i = 0; i < spawnPointList.Count; i++)
             {
@@ -78,7 +75,27 @@ public class Wave : MonoBehaviour
                     i = spawnPointList.Count;
                 }
             }
+            endAcquired = true;
         }
+
+        if (inverted && !isInverted)
+        {
+            actualWaypoints.Reverse();
+            Transform auxTrans = spawnPoint;
+            spawnPoint = endPoint;
+            endPoint = auxTrans;
+            isInverted = true;
+        }
+
+        delayClock += Time.deltaTime;
+
+        if (delayClock > enemyDelay && spawnedEnemies < enemyCant)
+        {
+            SpawnEnemy(spawnPoint, endPoint, actualWaypoints, enemyAggression, enemySpeed);
+            spawnedEnemies++;
+            delayClock = 0f;
+        }
+
     }
 
     private void SpawnEnemy(Transform CspawnPoint, Transform CendPoint, List<Transform> Cwaypoints, float Caggression, float Cspeed)
