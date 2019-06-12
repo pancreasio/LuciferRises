@@ -11,22 +11,12 @@ public class Lucifer : MonoBehaviour
     public GameObject bullet, drone1, drone2, drone3, drone4, drone5, drone6;
     private GameObject model;
     public AudioSource fireSound;
-    private Transform bounds, cannon1, cannon2, cannon3, cannon4, droneCannon1, droneCannon2, droneCannon3, droneCannon4, droneCannon5, droneCannon6;
+    public Transform bounds, cannon1, cannon2, cannon3, cannon4, droneCannon1, droneCannon2, droneCannon3, droneCannon4, droneCannon5, droneCannon6;
 
     private void Start()
     {
         model = GameObject.Find("Model");
         bounds = GameObject.Find("Bounds").transform;
-        cannon1 = GameObject.Find("Cannon1").transform;
-        cannon2 = GameObject.Find("Cannon2").transform;
-        cannon3 = GameObject.Find("Cannon3").transform;
-        cannon4 = GameObject.Find("Cannon4").transform;
-        droneCannon1 = GameObject.Find("Drone Cannon1").transform;
-        droneCannon2 = GameObject.Find("Drone Cannon2").transform;
-        droneCannon3 = GameObject.Find("Drone Cannon3").transform;
-        droneCannon4 = GameObject.Find("Drone Cannon4").transform;
-        droneCannon5 = GameObject.Find("Drone Cannon5").transform;
-        droneCannon6 = GameObject.Find("Drone Cannon6").transform;
         fireClock = fireRate;
         hp = maxHP;
     }
