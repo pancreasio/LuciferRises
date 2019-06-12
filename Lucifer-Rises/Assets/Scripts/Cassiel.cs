@@ -8,7 +8,7 @@ public class Cassiel : MonoBehaviour
     private int hp, waypointPosition;
     public float fireRate, speed, waypointOffset;
     private float fireClock;
-    public GameObject bullet;
+    public GameObject bullet, explosion;
     public Transform cannon;
     public List<Transform> waypoints;
     public Transform endPoint;
@@ -83,6 +83,7 @@ public class Cassiel : MonoBehaviour
 
     private void Explode()
     {
+        Instantiate(explosion, transform.position, Quaternion.identity);
         Destroy(this.gameObject);
     }
 }

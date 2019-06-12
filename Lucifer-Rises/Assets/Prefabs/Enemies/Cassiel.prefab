@@ -82,6 +82,8 @@ MonoBehaviour:
   speed: 1
   waypointOffset: 0.01
   bullet: {fileID: 5566115941579503124, guid: d9c78ceed27b2c74b98d7a919b407131, type: 3}
+  explosion: {fileID: 8383546267886862993, guid: 2c57b17472401f641a5efafe1eb2b62e,
+    type: 3}
   cannon: {fileID: 246338693587389417}
   waypoints: []
   endPoint: {fileID: 0}

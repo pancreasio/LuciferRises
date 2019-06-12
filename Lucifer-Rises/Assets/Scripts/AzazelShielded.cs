@@ -6,7 +6,7 @@ public class AzazelShielded : MonoBehaviour
 {
     public Transform protectTarget, playerTransform;
     private GameObject protectOffsetPosition, playerFollowTransform;
-    public GameObject unleashedForm;
+    public GameObject unleashedForm, explosion;
     public bool shouldProtect = false;
     public int maxHP;
     public float speed, protectOffset, followOffset;
@@ -60,6 +60,7 @@ public class AzazelShielded : MonoBehaviour
 
     private void Explode()
     {
+        Instantiate(explosion, transform.position, Quaternion.identity);
         GameObject unleashedInstance = Instantiate(unleashedForm, transform.position, Quaternion.identity);
         unleashedInstance.GetComponent<AzazelUnleashed>().target = playerTransform;
         Destroy(this.gameObject);

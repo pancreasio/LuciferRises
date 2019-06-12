@@ -8,6 +8,7 @@ public class AzazelUnleashed : MonoBehaviour
     public int maxHP;
     private int hp;
     public Transform target;
+    public GameObject explosion;
 
     void Start()
     {
@@ -27,6 +28,7 @@ public class AzazelUnleashed : MonoBehaviour
 
     private void Explode()
     {
+        Instantiate(explosion, transform.position, Quaternion.identity);
         Destroy(this.gameObject);
     }
 

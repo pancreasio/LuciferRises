@@ -9,7 +9,7 @@ public class Hadraniel : MonoBehaviour
     private bool shouldFire;
     public float fireRate, speed, waypointOffset;
     private float fireClock;
-    public GameObject bullet;
+    public GameObject bullet, explosion;
     public Transform cannon0, cannon1, cannon2, endPoint;
 
     private void Start()
@@ -90,6 +90,7 @@ public class Hadraniel : MonoBehaviour
 
     private void Explode()
     {
+        Instantiate(explosion, transform.position, Quaternion.identity);
         Destroy(this.gameObject);
     }
 }

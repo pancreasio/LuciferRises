@@ -205,3 +205,5 @@ MonoBehaviour:
   speed: 2.4
   maxHP: 10
   target: {fileID: 0}
+  explosion: {fileID: 8383546267886862993, guid: 2c57b17472401f641a5efafe1eb2b62e,
+    type: 3}

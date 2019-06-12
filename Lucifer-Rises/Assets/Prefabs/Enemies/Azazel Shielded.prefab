@@ -97,10 +97,12 @@ MonoBehaviour:
   playerTransform: {fileID: 0}
   unleashedForm: {fileID: 2201905702880167099, guid: cefe85e8718682a4caeb53e269c4b895,
     type: 3}
+  explosion: {fileID: 880181524191428271, guid: aea35feb11122654594a3b94ecf7ce54,
+    type: 3}
   shouldProtect: 1
   maxHP: 100
   speed: 3
-  protectOffset: 0.37
+  protectOffset: 0.82
   followOffset: 0
 --- !u!1001 &4193881303366966694
 PrefabInstance:
