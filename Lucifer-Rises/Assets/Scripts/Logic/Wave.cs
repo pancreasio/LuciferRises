@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class Wave : MonoBehaviour
 {
@@ -8,8 +9,11 @@ public class Wave : MonoBehaviour
     private int spawnedEnemies;
     public float enemyDelay, enemySpeed, enemyAggression;
     private float delayClock;
-    public List<Transform> waypointList;
-    public GameObject cassiel;
+    private List<Transform> waypointList, spawnPointList;
+    public List<Transform> actualWaypoints;
+    public List<string> waypointNames;
+    public string spawnPointName, endPointName;
+    public GameObject cassiel, waypoints, spawnPoints;
     public Transform spawnPoint, endPoint;
 
 
@@ -17,6 +21,14 @@ public class Wave : MonoBehaviour
     {
         spawnedEnemies = 0;
         delayClock = 0;
+        waypointList = new List<Transform>();
+        spawnPointList = new List<Transform>();
+        waypoints = GameObject.Find("Waypoints");
+        spawnPoints = GameObject.Find("Spawn Points");
+        waypointList.AddRange(waypoints.GetComponentsInChildren<Transform>());
+        spawnPointList.AddRange(spawnPoints.GetComponentsInChildren<Transform>());
+        waypointList = waypointList.OrderBy(tile => tile.transform.name).ToList();
+        spawnPointList = spawnPointList.OrderBy(tile => tile.transform.name).ToList();
     }
 
     private void Update()
@@ -25,9 +37,47 @@ public class Wave : MonoBehaviour
 
         if (delayClock > enemyDelay && spawnedEnemies < enemyCant)
         {
-            SpawnEnemy(spawnPoint, endPoint, waypointList, enemyAggression, enemySpeed);
+            SpawnEnemy(spawnPoint, endPoint, actualWaypoints, enemyAggression, enemySpeed);
             spawnedEnemies++;
             delayClock = 0f;
+        }
+        if (waypointNames != null)
+        {
+            actualWaypoints.Clear();
+            for (int i = 0; i < waypointNames.Count; i++)
+            {
+                for (int i2 = 0; i2 < waypointList.Count; i2++)
+                {
+                    if (waypointList[i2].name == waypointNames[i])
+                    {
+                        actualWaypoints.Insert(i, waypointList[i2]);
+                        i2 = waypointList.Count;
+                    }
+                }
+            }
+        }
+        if (spawnPointName != null)
+        {
+            for (int i = 0; i < spawnPointList.Count; i++)
+            {
+                if (spawnPointList[i].name == spawnPointName)
+                {
+                    spawnPoint = spawnPointList[i];
+                    i = spawnPointList.Count;
+                }
+            }
+        }
+
+        if (endPointName != null)
+        {
+            for (int i = 0; i < spawnPointList.Count; i++)
+            {
+                if (spawnPointList[i].name == endPointName)
+                {
+                    endPoint = spawnPointList[i];
+                    i = spawnPointList.Count;
+                }
+            }
         }
     }
 
