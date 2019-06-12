@@ -6,7 +6,7 @@ using System.Linq;
 public class Wave : MonoBehaviour
 {
     public int enemyCant;
-    private int spawnedEnemies;
+    public static int spawnedEnemies, deadEnemies;
     public float enemyDelay, enemySpeed, enemyAggression;
     private float delayClock;
     private List<Transform> waypointList, spawnPointList;
@@ -21,7 +21,6 @@ public class Wave : MonoBehaviour
 
     private void Start()
     {
-        spawnedEnemies = 0;
         delayClock = 0;
         waypointList = new List<Transform>();
         spawnPointList = new List<Transform>();
@@ -31,6 +30,21 @@ public class Wave : MonoBehaviour
         spawnPointList.AddRange(spawnPoints.GetComponentsInChildren<Transform>());
         waypointList = waypointList.OrderBy(tile => tile.transform.name).ToList();
         spawnPointList = spawnPointList.OrderBy(tile => tile.transform.name).ToList();
+    }
+
+    public static int SpawnedEnemies()
+    {
+        return spawnedEnemies;
+    }
+
+    public static void EnemyDied()
+    {
+        deadEnemies++;
+    }
+
+    public static int DeadEnemies()
+    {
+        return deadEnemies;
     }
 
     private void Update()

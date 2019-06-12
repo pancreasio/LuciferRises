@@ -88,6 +88,7 @@ public class Cassiel : MonoBehaviour
 
     private void Explode()
     {
+        Wave.EnemyDied();
         Instantiate(explosion, transform.position, Quaternion.identity);
         Destroy(this.gameObject);
     }
