@@ -1328,7 +1328,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 44188cdc983cb8349aef94b7f1ed21a4, type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 44188cdc983cb8349aef94b7f1ed21a4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1699,6 +1699,7 @@ GameObject:
   - component: {fileID: 1059653909}
   - component: {fileID: 1059653908}
   - component: {fileID: 1059653907}
+  - component: {fileID: 1059653910}
   m_Layer: 8
   m_Name: Lucifer
   m_TagString: Player
@@ -1906,6 +1907,25 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &1059653910
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1059653904}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ba18251c194a8aa43a76e8f2f304c788, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1188018283 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 44188cdc983cb8349aef94b7f1ed21a4,
