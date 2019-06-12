@@ -727,6 +727,7 @@ MonoBehaviour:
   spawnPoints: {fileID: 0}
   spawnPoint: {fileID: 0}
   endPoint: {fileID: 0}
+  inverted: 0
 --- !u!4 &413518516
 Transform:
   m_ObjectHideFlags: 0
