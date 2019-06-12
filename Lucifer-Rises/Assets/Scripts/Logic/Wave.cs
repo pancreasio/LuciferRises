@@ -6,7 +6,7 @@ using System.Linq;
 public class Wave : MonoBehaviour
 {
     public int enemyCant;
-    public static int spawnedEnemies, deadEnemies;
+    public static int spawnedEnemies = 0, deadEnemies = 0;
     public float enemyDelay, enemySpeed, enemyAggression;
     private float delayClock;
     private List<Transform> waypointList, spawnPointList;

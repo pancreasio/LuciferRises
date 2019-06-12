@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AzazelShielded : MonoBehaviour
+public class AzraelShielded : MonoBehaviour
 {
     public Transform protectTarget, playerTransform;
     private GameObject protectOffsetPosition, playerFollowTransform;
@@ -62,7 +62,7 @@ public class AzazelShielded : MonoBehaviour
     {
         Instantiate(explosion, transform.position, Quaternion.identity);
         GameObject unleashedInstance = Instantiate(unleashedForm, transform.position, Quaternion.identity);
-        unleashedInstance.GetComponent<AzazelUnleashed>().target = playerTransform;
+        unleashedInstance.GetComponent<AzraelUnleashed>().target = playerTransform;
         Destroy(this.gameObject);
     }
 }
