@@ -12,6 +12,7 @@ public class Cassiel : MonoBehaviour
     public Transform cannon;
     public List<Transform> waypoints;
     public Transform endPoint;
+    public bool shouldFire = false;
 
 
     private void Start()
@@ -23,8 +24,10 @@ public class Cassiel : MonoBehaviour
 
     private void Update()
     {
-        fireClock += Time.deltaTime;
-
+        if (shouldFire)
+        {
+            fireClock += Time.deltaTime;
+        }
         if (hp <= 0)
         {
             Explode();
@@ -38,6 +41,7 @@ public class Cassiel : MonoBehaviour
 
         if (waypointPosition >= waypoints.Count)
         {
+            shouldFire = false;
             transform.position += Vector3.Normalize(endPoint.position - transform.position) * speed * Time.deltaTime;
             if (Vector3.Distance(endPoint.position, transform.position) < waypointOffset)
             {
@@ -50,6 +54,7 @@ public class Cassiel : MonoBehaviour
             if (Vector3.Distance(waypoints[waypointPosition].transform.position, transform.position) < waypointOffset)
             {
                 waypointPosition++;
+                shouldFire = true;
             }
         }
     }
