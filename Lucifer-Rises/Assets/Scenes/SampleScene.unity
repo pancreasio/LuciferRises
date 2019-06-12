@@ -112,6 +112,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &75753235 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 44188cdc983cb8349aef94b7f1ed21a4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1840138438}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &85052786
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,6 +238,12 @@ Transform:
   m_Father: {fileID: 1059653906}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &149189209 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 44188cdc983cb8349aef94b7f1ed21a4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1943531995}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &149189210 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 44188cdc983cb8349aef94b7f1ed21a4,
@@ -568,7 +580,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 44188cdc983cb8349aef94b7f1ed21a4, type: 3}
       propertyPath: m_Name
-      value: Drone 4
+      value: Drone4
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 44188cdc983cb8349aef94b7f1ed21a4, type: 3}
+      propertyPath: m_TagString
+      value: Drone
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 44188cdc983cb8349aef94b7f1ed21a4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1094,6 +1110,12 @@ Transform:
   m_Father: {fileID: 1702573113}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &652335765 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 44188cdc983cb8349aef94b7f1ed21a4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1467808886}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &652370787
 GameObject:
   m_ObjectHideFlags: 0
@@ -1270,7 +1292,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 44188cdc983cb8349aef94b7f1ed21a4, type: 3}
       propertyPath: m_Name
-      value: Drone 6
+      value: Drone6
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 44188cdc983cb8349aef94b7f1ed21a4, type: 3}
+      propertyPath: m_TagString
+      value: Drone
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 44188cdc983cb8349aef94b7f1ed21a4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1695,9 +1721,16 @@ MonoBehaviour:
   speedX: 6
   speedY: 6
   fireRate: 0.04
-  maxHP: 0
   positionOffset: 0.01
+  droneAmmount: 6
+  maxHP: 0
   bullet: {fileID: 5381549330020722705, guid: 73424946f9a992d48885eedc0e70bdc9, type: 3}
+  drone1: {fileID: 652335765}
+  drone2: {fileID: 75753235}
+  drone3: {fileID: 149189209}
+  drone4: {fileID: 1188018283}
+  drone5: {fileID: 1719473732}
+  drone6: {fileID: 2021341301}
   fireSound: {fileID: 1059653909}
 --- !u!4 &1059653906
 Transform:
@@ -1873,6 +1906,12 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1188018283 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 44188cdc983cb8349aef94b7f1ed21a4,
+    type: 3}
+  m_PrefabInstance: {fileID: 353930870}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1188018284 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 44188cdc983cb8349aef94b7f1ed21a4,
@@ -2175,7 +2214,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 44188cdc983cb8349aef94b7f1ed21a4, type: 3}
       propertyPath: m_Name
-      value: Drone 5
+      value: Drone5
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 44188cdc983cb8349aef94b7f1ed21a4, type: 3}
+      propertyPath: m_TagString
+      value: Drone
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 44188cdc983cb8349aef94b7f1ed21a4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2274,7 +2317,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 44188cdc983cb8349aef94b7f1ed21a4, type: 3}
       propertyPath: m_Name
-      value: Drone 1
+      value: Drone1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 44188cdc983cb8349aef94b7f1ed21a4, type: 3}
+      propertyPath: m_TagString
+      value: Drone
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 44188cdc983cb8349aef94b7f1ed21a4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2529,6 +2576,12 @@ Transform:
   m_Father: {fileID: 652370788}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1719473732 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 44188cdc983cb8349aef94b7f1ed21a4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1361330231}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1719473733 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 44188cdc983cb8349aef94b7f1ed21a4,
@@ -2604,7 +2657,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 44188cdc983cb8349aef94b7f1ed21a4, type: 3}
       propertyPath: m_Name
-      value: Drone 2
+      value: Drone2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 44188cdc983cb8349aef94b7f1ed21a4, type: 3}
+      propertyPath: m_TagString
+      value: Drone
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 44188cdc983cb8349aef94b7f1ed21a4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2780,7 +2837,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100000, guid: 44188cdc983cb8349aef94b7f1ed21a4, type: 3}
       propertyPath: m_Name
-      value: Drone 3
+      value: Drone3
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 44188cdc983cb8349aef94b7f1ed21a4, type: 3}
+      propertyPath: m_TagString
+      value: Drone
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 44188cdc983cb8349aef94b7f1ed21a4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2870,6 +2931,12 @@ Transform:
   m_Father: {fileID: 652370788}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2021341301 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 44188cdc983cb8349aef94b7f1ed21a4,
+    type: 3}
+  m_PrefabInstance: {fileID: 762181536}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2021341302 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 44188cdc983cb8349aef94b7f1ed21a4,

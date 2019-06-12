@@ -9,6 +9,7 @@ TagManager:
   - Enemy
   - Waypoint
   - Spawn Point
+  - Drone
   layers:
   - Default
   - TransparentFX
