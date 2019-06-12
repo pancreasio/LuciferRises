@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4193881302673642531}
   - component: {fileID: 4193881302673642530}
   m_Layer: 0
-  m_Name: Azazel Shielded
+  m_Name: Azrael Shielded
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -100,7 +100,7 @@ MonoBehaviour:
   explosion: {fileID: 880181524191428271, guid: aea35feb11122654594a3b94ecf7ce54,
     type: 3}
   shouldProtect: 1
-  maxHP: 100
+  maxHP: 150
   speed: 3
   protectOffset: 0.82
   followOffset: 0
@@ -111,10 +111,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4193881302673642529}
     m_Modifications:
-    - target: {fileID: 100000, guid: 5f0db6ab17308f54b888ec2f28f2abdb, type: 3}
-      propertyPath: m_Name
-      value: Azazel
-      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5f0db6ab17308f54b888ec2f28f2abdb, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -170,6 +166,10 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 5f0db6ab17308f54b888ec2f28f2abdb, type: 3}
       propertyPath: m_LocalScale.z
       value: 5.152134
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5f0db6ab17308f54b888ec2f28f2abdb, type: 3}
+      propertyPath: m_Name
+      value: Azazel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f0db6ab17308f54b888ec2f28f2abdb, type: 3}

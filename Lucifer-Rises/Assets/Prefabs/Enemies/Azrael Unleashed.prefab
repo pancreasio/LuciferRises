@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 2201905702880167097}
   - component: {fileID: 2201905702880167098}
   m_Layer: 0
-  m_Name: Azazel Unleashed
+  m_Name: Azrael Unleashed
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -203,7 +203,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2.4
-  maxHP: 10
+  maxHP: 20
   target: {fileID: 0}
   explosion: {fileID: 8383546267886862993, guid: 2c57b17472401f641a5efafe1eb2b62e,
     type: 3}

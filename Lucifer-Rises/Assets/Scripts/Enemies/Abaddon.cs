@@ -10,11 +10,13 @@ public class Abaddon : MonoBehaviour
     public GameObject bullet, explosion;
     public float fireRate, speed, waypointOffset, rotationSpeed;
     private float fireClock;
+    private bool shouldFire;
 
     private void Start()
     {
         hp = maxHp;
         fireClock = 0;
+        shouldFire = false;
     }
 
     void Update()
@@ -23,11 +25,18 @@ public class Abaddon : MonoBehaviour
         {
             transform.position += Vector3.Normalize(endPoint.position - transform.position) * speed * Time.deltaTime;
         }
-        fireClock += Time.deltaTime;
-        if (fireClock >= fireRate)
+        else
         {
-            fireClock = 0;
-            Fire();
+            shouldFire = true;
+        }
+        if (shouldFire)
+        {
+            fireClock += Time.deltaTime;
+            if (fireClock >= fireRate)
+            {
+                fireClock = 0;
+                Fire();
+            }
         }
         transform.Rotate(Vector3.back, rotationSpeed * Time.deltaTime);
 

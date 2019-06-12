@@ -232,7 +232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 712fdbc451d8fe442988c2aee84d5f5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 400
+  maxHp: 320
   cannon0: {fileID: 8096762659304302745}
   cannon1: {fileID: 8096762658917582730}
   cannon2: {fileID: 8096762657827749707}
