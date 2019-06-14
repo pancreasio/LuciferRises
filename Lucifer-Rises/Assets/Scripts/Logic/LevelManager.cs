@@ -10,10 +10,12 @@ public class LevelManager : MonoBehaviour
         azraelS, azraelU, hadraniel, abaddon, vWave, wWave, oWave, siWave, vWaveI, wWaveI, oWaveI, siWaveI
     }
 
+    [System.Serializable]
     public class EnemyWave
     {
         public WaveType waveType;
         public float time;
+        public string spawnPoint;
         public bool spawned;
     }
 
@@ -48,7 +50,7 @@ public class LevelManager : MonoBehaviour
 
         foreach (EnemyWave waveCount in waves)
         {
-            if (waveCount.time >= levelTime && !waveCount.spawned)
+            if (waveCount.time <= levelTime && !waveCount.spawned)
             {
                 SpawnWave(waveCount);
                 waveCount.spawned = true;
@@ -82,30 +84,38 @@ public class LevelManager : MonoBehaviour
                 waveToSpawn = abaddonPrefab;
                 break;
             case WaveType.vWave:
+                Debug.Log("vWave Spawned");
                 waveToSpawn = vWavePrefab;
                 break;
             case WaveType.wWave:
+                Debug.Log("wWave Spawned");
                 waveToSpawn = wWavePrefab;
                 break;
             case WaveType.oWave:
+                Debug.Log("oWave Spawned");
                 waveToSpawn = oWavePrefab;
                 break;
             case WaveType.siWave:
+                Debug.Log("siWave Spawned");
                 waveToSpawn = siWavePrefab;
                 break;
             case WaveType.vWaveI:
+                Debug.Log("vWave  inverted Spawned");
                 waveToSpawn = vWavePrefab;
                 waveToSpawn.GetComponent<Wave>().inverted = true;
                 break;
             case WaveType.wWaveI:
+                Debug.Log("wWave inverted Spawned");
                 waveToSpawn = wWavePrefab;
                 waveToSpawn.GetComponent<Wave>().inverted = true;
                 break;
             case WaveType.oWaveI:
+                Debug.Log("oWave inverted Spawned");
                 waveToSpawn = oWavePrefab;
                 waveToSpawn.GetComponent<Wave>().inverted = true;
                 break;
             case WaveType.siWaveI:
+                Debug.Log("siWave inverted Spawned");
                 waveToSpawn = siWavePrefab;
                 waveToSpawn.GetComponent<Wave>().inverted = true;
                 break;
