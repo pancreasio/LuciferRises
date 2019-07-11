@@ -6,11 +6,11 @@ using UnityEngine;
 public class AzraelShielded : MonoBehaviour
 {
     public Transform protectTarget, playerTransform;
-    private GameObject protectOffsetPosition, playerFollowTransform;
+    private GameObject protectDeltaTarget, playerFollowTarget;
     public GameObject unleashedForm, explosion;
     public bool shouldProtect = false;
     public int maxHP;
-    public float speed, protectOffset, followOffset;
+    public float speed, protectOffset, followOffset, dontJitter;
     private int hp;
 
     private void Start()
@@ -24,11 +24,11 @@ public class AzraelShielded : MonoBehaviour
         {
             FindProtectTarget();
         }
-        protectOffsetPosition = new GameObject();
-        playerFollowTransform = new GameObject();
+        protectDeltaTarget = new GameObject();
+        playerFollowTarget = new GameObject();
     }
 
-    
+
 
     private void Update()
     {
@@ -39,13 +39,21 @@ public class AzraelShielded : MonoBehaviour
 
         if (shouldProtect && protectTarget != null)
         {
-            protectOffsetPosition.transform.position = new Vector3(protectTarget.position.x, protectTarget.position.y - protectOffset, 0f);
-            transform.position += Vector3.Normalize(protectOffsetPosition.transform.position - transform.position) * speed * Time.deltaTime;
+
+            protectDeltaTarget.transform.position = new Vector3(protectTarget.position.x, protectTarget.position.y - protectOffset, 0f);
+            if (Vector3.Distance(this.transform.position, protectDeltaTarget.transform.position) > dontJitter)
+            {
+                transform.position += Vector3.Normalize(protectDeltaTarget.transform.position - transform.position) * speed * Time.deltaTime;
+            }
         }
         else
         {
-            playerFollowTransform.transform.position = new Vector3(playerTransform.position.x, followOffset, 0f);
-            transform.position += Vector3.Normalize(playerFollowTransform.transform.position - transform.position) * speed * Time.deltaTime;
+
+            playerFollowTarget.transform.position = new Vector3(playerTransform.position.x, followOffset, 0f);
+            if (Vector3.Distance(this.transform.position, playerFollowTarget.transform.position) > dontJitter)
+            {
+                transform.position += Vector3.Normalize(playerFollowTarget.transform.position - transform.position) * speed * Time.deltaTime;
+            }
         }
     }
 
