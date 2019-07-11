@@ -795,6 +795,16 @@ MonoBehaviour:
     spawnPoint: 0
     target: {fileID: 0}
     spawned: 0
+  - waveType: 2
+    time: 2
+    spawnPoint: s42
+    target: {fileID: 543006535}
+    spawned: 0
+  - waveType: 3
+    time: 2
+    spawnPoint: s02
+    target: {fileID: 1256734481}
+    spawned: 0
   levelEnded: 0
 --- !u!4 &517127652
 Transform:

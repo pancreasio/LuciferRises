@@ -13,6 +13,10 @@ public class AzraelUnleashed : MonoBehaviour
     void Start()
     {
         hp = maxHP;
+        if (!target)
+        {
+            target = GameObject.Find("Lucifer").transform;
+        }
     }
 
     void Update()

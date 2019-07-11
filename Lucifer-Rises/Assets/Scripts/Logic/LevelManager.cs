@@ -78,6 +78,7 @@ public class LevelManager : MonoBehaviour
                 break;
             case WaveType.azraelU:
                 waveToSpawn = azraelUPrefab;
+                waveToSpawn = Instantiate(azraelUPrefab, GameObject.Find(wave.spawnPoint).transform.position, Quaternion.identity);
                 break;
             case WaveType.hadraniel:
                 waveToSpawn = hadranielPrefab;
@@ -86,6 +87,8 @@ public class LevelManager : MonoBehaviour
                 break;
             case WaveType.abaddon:
                 waveToSpawn = abaddonPrefab;
+                waveToSpawn.GetComponent<Abaddon>().endPoint = wave.target.transform;
+                waveToSpawn = Instantiate(abaddonPrefab, GameObject.Find(wave.spawnPoint).transform.position, Quaternion.identity);
                 break;
             case WaveType.vWave:
                 waveToSpawn = vWavePrefab;
