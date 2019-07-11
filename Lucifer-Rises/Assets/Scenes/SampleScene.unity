@@ -790,13 +790,10 @@ MonoBehaviour:
   siWavePrefab: {fileID: 2372340788161292151, guid: 2bdc4b13a19c6a04296b8c1c08d3d142,
     type: 3}
   waves:
-  - waveType: 4
+  - waveType: 2
     time: 0
-    spawnPoint: 
-    spawned: 0
-  - waveType: 9
-    time: 6
-    spawnPoint: 
+    spawnPoint: 33
+    target: {fileID: 548775197}
     spawned: 0
   levelEnded: 0
 --- !u!4 &517127652
@@ -1803,7 +1800,7 @@ MonoBehaviour:
   speedY: 6
   fireRate: 0.04
   positionOffset: 0.01
-  droneAmmount: 6
+  droneAmmount: 0
   maxHP: 0
   bullet: {fileID: 5381549330020722705, guid: 73424946f9a992d48885eedc0e70bdc9, type: 3}
   drone1: {fileID: 652335765}

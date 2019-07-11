@@ -16,6 +16,7 @@ public class LevelManager : MonoBehaviour
         public WaveType waveType;
         public float time;
         public string spawnPoint;
+        public GameObject target;
         public bool spawned;
     }
 
@@ -69,6 +70,7 @@ public class LevelManager : MonoBehaviour
     private void SpawnWave(EnemyWave wave)
     {
         GameObject waveToSpawn = new GameObject();
+        bool cassielWave = false;
         switch (wave.waveType)
         {
             case WaveType.azraelS:
@@ -79,41 +81,54 @@ public class LevelManager : MonoBehaviour
                 break;
             case WaveType.hadraniel:
                 waveToSpawn = hadranielPrefab;
+                waveToSpawn.GetComponent<Hadraniel>().endPoint = wave.target.transform;
+                waveToSpawn = Instantiate(hadranielPrefab, GameObject.Find(wave.spawnPoint).transform.position, Quaternion.identity);
                 break;
             case WaveType.abaddon:
                 waveToSpawn = abaddonPrefab;
                 break;
             case WaveType.vWave:
                 waveToSpawn = vWavePrefab;
+                cassielWave = true;
                 break;
             case WaveType.wWave:
                 waveToSpawn = wWavePrefab;
+                cassielWave = true;
                 break;
             case WaveType.oWave:
                 waveToSpawn = oWavePrefab;
+                cassielWave = true;
                 break;
             case WaveType.siWave:
                 waveToSpawn = siWavePrefab;
+                cassielWave = true;
                 break;
             case WaveType.vWaveI:
                 waveToSpawn = vWavePrefab;
                 waveToSpawn.GetComponent<Wave>().inverted = true;
+                cassielWave = true;
                 break;
             case WaveType.wWaveI:
                 waveToSpawn = wWavePrefab;
                 waveToSpawn.GetComponent<Wave>().inverted = true;
+                cassielWave = true;
                 break;
             case WaveType.oWaveI:
                 waveToSpawn = oWavePrefab;
                 waveToSpawn.GetComponent<Wave>().inverted = true;
+                cassielWave = true;
                 break;
             case WaveType.siWaveI:
                 waveToSpawn = siWavePrefab;
                 waveToSpawn.GetComponent<Wave>().inverted = true;
+                cassielWave = true;
                 break;
             default:
                 break;
         }
-        Instantiate(waveToSpawn);
+        if (cassielWave)
+        {
+            Instantiate(waveToSpawn);
+        }
     }
 }
