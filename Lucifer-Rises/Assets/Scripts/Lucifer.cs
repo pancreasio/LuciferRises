@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Lucifer : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class Lucifer : MonoBehaviour
     private int  hp;
     public GameObject bullet, drone1, drone2, drone3, drone4, drone5, drone6;
     private GameObject model;
+    public Image healthbar;
     public AudioSource fireSound;
     public Transform bounds, cannon1, cannon2, cannon3, cannon4, droneCannon1, droneCannon2, droneCannon3, droneCannon4, droneCannon5, droneCannon6;
 
@@ -27,6 +29,8 @@ public class Lucifer : MonoBehaviour
         inputX = Input.GetAxis("Horizontal");
         inputY = Input.GetAxis("Vertical");
         model.transform.rotation = Quaternion.identity;
+
+        //healthbar.flexibleHeight;
 
         if (hp <= 0)
         {
