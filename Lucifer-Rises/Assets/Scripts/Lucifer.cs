@@ -28,7 +28,6 @@ public class Lucifer : MonoBehaviour
         inputY = Input.GetAxis("Vertical");
         model.transform.rotation = Quaternion.identity;
 
-        Debug.Log(hp);
         if (hp <= 0)
         {
             Destroy(this.gameObject);
