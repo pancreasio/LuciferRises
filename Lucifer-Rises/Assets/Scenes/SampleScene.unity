@@ -400,7 +400,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!82 &337930976
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1806,7 +1806,7 @@ MonoBehaviour:
   fireRate: 0.04
   positionOffset: 0.01
   droneAmmount: 0
-  maxHP: 0
+  maxHP: 5
   bullet: {fileID: 5381549330020722705, guid: 73424946f9a992d48885eedc0e70bdc9, type: 3}
   drone1: {fileID: 652335765}
   drone2: {fileID: 75753235}

@@ -15,7 +15,11 @@ public class AzraelUnleashed : MonoBehaviour
         hp = maxHP;
         if (!target)
         {
-            target = GameObject.Find("Lucifer").transform;
+            GameObject targetObject = GameObject.Find("Lucifer");
+            if (targetObject)
+            {
+                target = targetObject.transform;
+            }
         }
     }
 
@@ -26,8 +30,15 @@ public class AzraelUnleashed : MonoBehaviour
             Explode();
         }
 
-        transform.right = -(target.position - transform.position);
-        transform.position -= transform.right * speed * Time.deltaTime;
+        if (!target)
+        {
+            Explode();
+        }
+        else
+        {
+            transform.right = -(target.position - transform.position);
+            transform.position -= transform.right * speed * Time.deltaTime;
+        }
     }
 
     private void Explode()

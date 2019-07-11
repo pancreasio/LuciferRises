@@ -37,6 +37,11 @@ public class AzraelShielded : MonoBehaviour
             Explode();
         }
 
+        if (!playerTransform)
+        {
+            Explode();
+        }
+
         if (shouldProtect && protectTarget != null)
         {
 
