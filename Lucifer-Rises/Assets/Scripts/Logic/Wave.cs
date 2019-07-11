@@ -6,7 +6,8 @@ using System.Linq;
 public class Wave : MonoBehaviour
 {
     public int enemyCant;
-    public static int spawnedEnemies = 0, deadEnemies = 0;
+    private int spawnedEnemies;
+    public static int totalSpawnedEnemies = 0, deadEnemies = 0;
     public float enemyDelay, enemySpeed, enemyAggression;
     private float delayClock;
     private List<Transform> waypointList, spawnPointList;
@@ -22,6 +23,7 @@ public class Wave : MonoBehaviour
     private void Start()
     {
         delayClock = 0;
+        spawnedEnemies = 0;
         waypointList = new List<Transform>();
         spawnPointList = new List<Transform>();
         waypoints = GameObject.Find("Waypoints");
@@ -34,7 +36,7 @@ public class Wave : MonoBehaviour
 
     public static int SpawnedEnemies()
     {
-        return spawnedEnemies;
+        return totalSpawnedEnemies;
     }
 
     public static void EnemyDied()
@@ -106,8 +108,13 @@ public class Wave : MonoBehaviour
         if (delayClock > enemyDelay && spawnedEnemies < enemyCant)
         {
             SpawnEnemy(spawnPoint, endPoint, actualWaypoints, enemyAggression, enemySpeed);
+            totalSpawnedEnemies++;
             spawnedEnemies++;
             delayClock = 0f;
+        }
+
+        if (spawnedEnemies >= enemyCant) {
+            Destroy(this.gameObject);
         }
 
     }

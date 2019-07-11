@@ -59,7 +59,7 @@ public class LevelManager : MonoBehaviour
 
         if (levelTime > lastWaveTime)
         {
-            if (Wave.deadEnemies >= Wave.spawnedEnemies)
+            if (Wave.deadEnemies >= Wave.totalSpawnedEnemies)
             {
                 levelEnded = true;
             }
@@ -84,38 +84,30 @@ public class LevelManager : MonoBehaviour
                 waveToSpawn = abaddonPrefab;
                 break;
             case WaveType.vWave:
-                Debug.Log("vWave Spawned");
                 waveToSpawn = vWavePrefab;
                 break;
             case WaveType.wWave:
-                Debug.Log("wWave Spawned");
                 waveToSpawn = wWavePrefab;
                 break;
             case WaveType.oWave:
-                Debug.Log("oWave Spawned");
                 waveToSpawn = oWavePrefab;
                 break;
             case WaveType.siWave:
-                Debug.Log("siWave Spawned");
                 waveToSpawn = siWavePrefab;
                 break;
             case WaveType.vWaveI:
-                Debug.Log("vWave  inverted Spawned");
                 waveToSpawn = vWavePrefab;
                 waveToSpawn.GetComponent<Wave>().inverted = true;
                 break;
             case WaveType.wWaveI:
-                Debug.Log("wWave inverted Spawned");
                 waveToSpawn = wWavePrefab;
                 waveToSpawn.GetComponent<Wave>().inverted = true;
                 break;
             case WaveType.oWaveI:
-                Debug.Log("oWave inverted Spawned");
                 waveToSpawn = oWavePrefab;
                 waveToSpawn.GetComponent<Wave>().inverted = true;
                 break;
             case WaveType.siWaveI:
-                Debug.Log("siWave inverted Spawned");
                 waveToSpawn = siWavePrefab;
                 waveToSpawn.GetComponent<Wave>().inverted = true;
                 break;
