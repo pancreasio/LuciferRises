@@ -75,6 +75,7 @@ public class LevelManager : MonoBehaviour
         {
             case WaveType.azraelS:
                 waveToSpawn = azraelSPrefab;
+                waveToSpawn = Instantiate(azraelSPrefab, GameObject.Find(wave.spawnPoint).transform.position, Quaternion.identity);
                 break;
             case WaveType.azraelU:
                 waveToSpawn = azraelUPrefab;

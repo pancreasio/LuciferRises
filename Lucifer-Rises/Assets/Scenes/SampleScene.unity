@@ -790,9 +790,9 @@ MonoBehaviour:
   siWavePrefab: {fileID: 2372340788161292151, guid: 2bdc4b13a19c6a04296b8c1c08d3d142,
     type: 3}
   waves:
-  - waveType: 4
+  - waveType: 1
     time: 0
-    spawnPoint: 0
+    spawnPoint: s02
     target: {fileID: 0}
     spawned: 0
   - waveType: 2
@@ -804,6 +804,11 @@ MonoBehaviour:
     time: 2
     spawnPoint: s02
     target: {fileID: 1256734481}
+    spawned: 0
+  - waveType: 1
+    time: 1
+    spawnPoint: s42
+    target: {fileID: 0}
     spawned: 0
   levelEnded: 0
 --- !u!4 &517127652

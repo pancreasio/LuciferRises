@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,9 +16,19 @@ public class AzraelShielded : MonoBehaviour
     private void Start()
     {
         hp = maxHP;
+        if (!playerTransform)
+        {
+            playerTransform = GameObject.Find("Lucifer").transform;
+        }
+        if (!protectTarget)
+        {
+            FindProtectTarget();
+        }
         protectOffsetPosition = new GameObject();
         playerFollowTransform = new GameObject();
     }
+
+    
 
     private void Update()
     {
@@ -64,5 +75,25 @@ public class AzraelShielded : MonoBehaviour
         GameObject unleashedInstance = Instantiate(unleashedForm, transform.position, Quaternion.identity);
         unleashedInstance.GetComponent<AzraelUnleashed>().target = playerTransform;
         Destroy(this.gameObject);
+    }
+
+    private void FindProtectTarget()
+    {
+        GameObject newTarget = new GameObject();
+        if ((newTarget = GameObject.Find("Abaddon")) && newTarget)
+        {
+            protectTarget = newTarget.transform;
+        }
+        else
+        {
+            if ((newTarget = GameObject.Find("Hadraniel")) && newTarget)
+            {
+                protectTarget = newTarget.transform;
+            }
+            else
+            {
+                protectTarget = null;
+            }
+        }
     }
 }
