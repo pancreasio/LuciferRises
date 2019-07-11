@@ -52,10 +52,11 @@ MonoBehaviour:
   - 02
   - 21
   - 42
-  spawnPointName: 02
-  endPointName: 42
+  spawnPointName: s02
+  endPointName: s42
   cassiel: {fileID: 246338694213005708, guid: 9b455a1a60e169943ba7d2d0c989cee6, type: 3}
   waypoints: {fileID: 0}
   spawnPoints: {fileID: 0}
   spawnPoint: {fileID: 0}
   endPoint: {fileID: 0}
+  inverted: 0
