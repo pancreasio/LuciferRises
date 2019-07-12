@@ -5,8 +5,9 @@ using UnityEngine.UI;
 
 public class Lucifer : MonoBehaviour
 {
-    public float speedX, speedY, fireRate, positionOffset;
-    private float inputX, inputY, fireClock;
+    public float speedX, speedY, fireRate, positionOffset, iTime;
+    private float inputX, inputY, fireClock, iClock, intermitentClock;
+    private bool invulnerable;
     public int droneAmmount, maxHP;
     private int  hp;
     public GameObject bullet, drone1, drone2, drone3, drone4, drone5, drone6;
@@ -21,6 +22,9 @@ public class Lucifer : MonoBehaviour
         bounds = GameObject.Find("Bounds").transform;
         fireClock = fireRate;
         hp = maxHP;
+        invulnerable = false;
+        iClock = 0;
+        intermitentClock = 0;
     }
 
     private void Update()
@@ -35,6 +39,25 @@ public class Lucifer : MonoBehaviour
         if (hp <= 0)
         {
             Destroy(this.gameObject);
+        }
+
+        if (invulnerable)
+        {            
+            iClock += Time.deltaTime;
+            intermitentClock += Time.deltaTime;
+            if (intermitentClock >= 0.1f)
+            {
+                model.SetActive(!model.activeSelf);
+                intermitentClock = 0;
+            }
+
+            if (iClock >= iTime)
+            {
+                model.SetActive(true);
+                invulnerable = false;
+                iClock = 0;
+                intermitentClock = 0;
+            }
         }
 
         if (inputX > 0)
@@ -156,7 +179,11 @@ public class Lucifer : MonoBehaviour
     {
         if (collision.transform.tag == "Enemy Bullet")
         {
-            hp--;
+            if (!invulnerable)
+            {
+                hp--;
+                invulnerable = true;
+            }
         }
     }
 }
