@@ -30,8 +30,7 @@ public class Lucifer : MonoBehaviour
         inputY = Input.GetAxis("Vertical");
         model.transform.rotation = Quaternion.identity;
 
-        //healthbar.rectTransform.rect.height = hp * 20.0f;
-        healthbar.rectTransform.sizeDelta = new Vector2(healthbar.rectTransform.sizeDelta.y, hp * 20.0f);
+        healthbar.rectTransform.sizeDelta = new Vector2(healthbar.rectTransform.sizeDelta.x, hp * 20.0f);
 
         if (hp <= 0)
         {
