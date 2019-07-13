@@ -39,6 +39,8 @@ public class Lucifer : MonoBehaviour
         if (hp <= 0)
         {
             Destroy(this.gameObject);
+            GameManager gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+            gameManager.GameOver();
         }
 
         if (invulnerable)
@@ -211,6 +213,7 @@ public class Lucifer : MonoBehaviour
                 hp--;
                 droneAmmount -= 2;
                 invulnerable = true;
+                GameManager.score -= 200;
             }
         }
         if (collision.transform.tag == "Powerup")

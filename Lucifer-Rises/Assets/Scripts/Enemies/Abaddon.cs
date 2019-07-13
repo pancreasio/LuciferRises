@@ -49,6 +49,7 @@ public class Abaddon : MonoBehaviour
     private void Explode()
     {
         Wave.EnemyDied();
+        GameManager.score += 250;
         Instantiate(explosion, transform.position, Quaternion.identity);
         Instantiate(drone, transform.position, Quaternion.identity);
         Destroy(this.gameObject);

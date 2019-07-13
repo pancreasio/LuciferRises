@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.UI;
 
 public class LevelManager : MonoBehaviour
 {
@@ -22,6 +23,7 @@ public class LevelManager : MonoBehaviour
 
     public GameObject cassielPrefab, azraelSPrefab, azraelUPrefab, hadranielPrefab, abaddonPrefab, vWavePrefab, wWavePrefab, oWavePrefab, siWavePrefab;
     public List<EnemyWave> waves;
+    public Text scoreText;
     public bool levelEnded;
     private float lastWaveTime, levelTime;
     private GameManager gameManager;
@@ -45,12 +47,15 @@ public class LevelManager : MonoBehaviour
                 lastWaveTime = waves[i].time;
             }
         }
+        gameManager.UpdateCurrent();
+        gameManager.SetRetryLevel();
     }
 
     private void Update()
     {
         levelTime += Time.deltaTime;
-        Debug.Log("level time: " + levelTime + "    last wave time: " + lastWaveTime + "     dead enemies: "+ Wave.deadEnemies+ "      spawned: " + Wave.totalSpawnedEnemies);
+
+        scoreText.text = "score: " + GameManager.score;
 
         foreach (EnemyWave waveCount in waves)
         {
@@ -68,6 +73,11 @@ public class LevelManager : MonoBehaviour
                 levelEnded = true;
                 gameManager.NextScene();
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            gameManager.NextScene();
         }
     }
 

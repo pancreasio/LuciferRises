@@ -93,6 +93,7 @@ public class Hadraniel : MonoBehaviour
     private void Explode()
     {
         Wave.EnemyDied();
+        GameManager.score += 100;
         Instantiate(explosion, transform.position, Quaternion.identity);
         if (Random.Range(0, 100) >= 65)
         {

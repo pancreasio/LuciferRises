@@ -44,6 +44,7 @@ public class AzraelUnleashed : MonoBehaviour
     private void Explode()
     {
         Wave.EnemyDied();
+        GameManager.score += 50;
         Instantiate(explosion, transform.position, Quaternion.identity);
         Destroy(this.gameObject);
     }
