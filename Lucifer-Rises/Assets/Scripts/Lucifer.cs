@@ -10,7 +10,7 @@ public class Lucifer : MonoBehaviour
     private bool invulnerable;
     public int droneAmmount, maxHP;
     private int  hp;
-    public GameObject bullet, drone1, drone2, drone3, drone4, drone5, drone6;
+    public GameObject bullet, drone1, drone2, drone3, drone4, drone5, drone6, droneExplosion;
     private GameObject model;
     public Image healthbar;
     public AudioSource fireSound;
@@ -117,6 +117,11 @@ public class Lucifer : MonoBehaviour
             fireClock = 0f;
         }
 
+        if (Input.GetKeyDown(KeyCode.K) && droneAmmount >=2)
+        {
+            DetonateDrones();
+        }
+
         if (droneAmmount >= 8)
         {
             droneAmmount = 6;
@@ -179,6 +184,16 @@ public class Lucifer : MonoBehaviour
         }
     }
 
+    private void DetonateDrones()
+    {
+        droneAmmount -= 2;
+        GameObject[] bulletList = GameObject.FindGameObjectsWithTag("Enemy Bullet");
+        foreach (GameObject bullet in bulletList)
+        {
+            Destroy(bullet.gameObject);
+        }
+        Instantiate(droneExplosion, transform.position, Quaternion.identity);
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

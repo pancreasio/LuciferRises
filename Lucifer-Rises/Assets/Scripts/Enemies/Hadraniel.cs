@@ -59,6 +59,8 @@ public class Hadraniel : MonoBehaviour
             }
         }
 
+
+
         if (hp <= 0)
         {
             Explode();
@@ -95,4 +97,5 @@ public class Hadraniel : MonoBehaviour
         Instantiate(drone, transform.position, Quaternion.identity);
         Destroy(this.gameObject);
     }
+
 }
