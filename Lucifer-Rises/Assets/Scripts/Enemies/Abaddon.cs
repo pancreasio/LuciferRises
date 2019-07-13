@@ -7,7 +7,7 @@ public class Abaddon : MonoBehaviour
     public int maxHp;
     private int hp;
     public Transform cannon0, cannon1, cannon2, cannon3, cannon4, cannon5, endPoint;
-    public GameObject bullet, explosion;
+    public GameObject bullet, explosion, drone;
     public float fireRate, speed, waypointOffset, rotationSpeed;
     private float fireClock;
     private bool shouldFire;
@@ -50,6 +50,7 @@ public class Abaddon : MonoBehaviour
     {
         Wave.EnemyDied();
         Instantiate(explosion, transform.position, Quaternion.identity);
+        Instantiate(drone, transform.position, Quaternion.identity);
         Destroy(this.gameObject);
     }
 

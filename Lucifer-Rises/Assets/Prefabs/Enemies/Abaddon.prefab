@@ -243,6 +243,7 @@ MonoBehaviour:
   bullet: {fileID: 5566115941579503124, guid: d9c78ceed27b2c74b98d7a919b407131, type: 3}
   explosion: {fileID: 3869100991404424524, guid: bb0d5c130f2d9974ab19c598893a4a1d,
     type: 3}
+  drone: {fileID: 5545675499842785337, guid: e20c9efac2a158a40b399730dadde21d, type: 3}
   fireRate: 0.2
   speed: 1
   waypointOffset: 0.1

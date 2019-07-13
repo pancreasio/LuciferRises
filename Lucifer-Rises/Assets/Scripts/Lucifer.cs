@@ -117,6 +117,11 @@ public class Lucifer : MonoBehaviour
             fireClock = 0f;
         }
 
+        if (droneAmmount >= 8)
+        {
+            droneAmmount = 6;
+        }
+
         if (droneAmmount >= 2)
         {
             drone1.SetActive(true);
@@ -184,6 +189,10 @@ public class Lucifer : MonoBehaviour
                 hp--;
                 invulnerable = true;
             }
+        }
+        if (collision.transform.tag == "Powerup")
+        {
+            droneAmmount += 2;
         }
     }
 }

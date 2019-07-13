@@ -133,6 +133,7 @@ MonoBehaviour:
   bullet: {fileID: 5566115941579503124, guid: d9c78ceed27b2c74b98d7a919b407131, type: 3}
   explosion: {fileID: 3869100991404424524, guid: bb0d5c130f2d9974ab19c598893a4a1d,
     type: 3}
+  drone: {fileID: 5545675499842785337, guid: e20c9efac2a158a40b399730dadde21d, type: 3}
   cannon0: {fileID: 7721668981695860937}
   cannon1: {fileID: 7721668981883936589}
   cannon2: {fileID: 7721668981989178890}
@@ -204,6 +205,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7721668981804745011}
     m_Modifications:
+    - target: {fileID: 100000, guid: 4d87f417fad4f9841a6d49b206dbc095, type: 3}
+      propertyPath: m_Name
+      value: Hadraniel
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4d87f417fad4f9841a6d49b206dbc095, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -259,10 +264,6 @@ PrefabInstance:
     - target: {fileID: 400000, guid: 4d87f417fad4f9841a6d49b206dbc095, type: 3}
       propertyPath: m_LocalScale.z
       value: 5.29635
-      objectReference: {fileID: 0}
-    - target: {fileID: 100000, guid: 4d87f417fad4f9841a6d49b206dbc095, type: 3}
-      propertyPath: m_Name
-      value: Hadraniel
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d87f417fad4f9841a6d49b206dbc095, type: 3}

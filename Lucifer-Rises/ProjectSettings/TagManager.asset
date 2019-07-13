@@ -10,6 +10,7 @@ TagManager:
   - Waypoint
   - Spawn Point
   - Drone
+  - Powerup
   layers:
   - Default
   - TransparentFX
