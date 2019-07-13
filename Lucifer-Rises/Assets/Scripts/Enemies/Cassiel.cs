@@ -45,6 +45,7 @@ public class Cassiel : MonoBehaviour
             transform.position += Vector3.Normalize(endPoint.position - transform.position) * speed * Time.deltaTime;
             if (Vector3.Distance(endPoint.position, transform.position) < waypointOffset)
             {
+                Wave.EnemyDied();
                 Destroy(this.gameObject);
             }
         }

@@ -48,6 +48,7 @@ public class LevelManager : MonoBehaviour
     private void Update()
     {
         levelTime += Time.deltaTime;
+        Debug.Log("level time: " + levelTime + "    last wave time: " + lastWaveTime + "     dead enemies: "+ Wave.deadEnemies+ "      spawned: " + Wave.totalSpawnedEnemies);
 
         foreach (EnemyWave waveCount in waves)
         {
@@ -58,7 +59,7 @@ public class LevelManager : MonoBehaviour
             }
         }
 
-        if (levelTime > lastWaveTime)
+        if (levelTime >= lastWaveTime)
         {
             if (Wave.deadEnemies >= Wave.totalSpawnedEnemies)
             {

@@ -94,7 +94,10 @@ public class Hadraniel : MonoBehaviour
     {
         Wave.EnemyDied();
         Instantiate(explosion, transform.position, Quaternion.identity);
-        Instantiate(drone, transform.position, Quaternion.identity);
+        if (Random.Range(0, 100) >= 65)
+        {
+            Instantiate(drone, transform.position, Quaternion.identity);
+        }
         Destroy(this.gameObject);
     }
 

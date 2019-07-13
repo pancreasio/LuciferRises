@@ -30,8 +30,8 @@ public class Lucifer : MonoBehaviour
     private void Update()
     {
         fireClock += Time.deltaTime;
-        inputX = Input.GetAxis("Horizontal");
-        inputY = Input.GetAxis("Vertical");
+        inputX = Input.GetAxisRaw("Horizontal");
+        inputY = Input.GetAxisRaw("Vertical");
         model.transform.rotation = Quaternion.identity;
 
         healthbar.rectTransform.sizeDelta = new Vector2(healthbar.rectTransform.sizeDelta.x, hp * 20.0f);
@@ -126,6 +126,13 @@ public class Lucifer : MonoBehaviour
         {
             droneAmmount = 6;
         }
+        else
+        {
+            if (droneAmmount <= 0)
+            {
+                droneAmmount = 0;
+            }
+        }
 
         if (droneAmmount >= 2)
         {
@@ -202,6 +209,7 @@ public class Lucifer : MonoBehaviour
             if (!invulnerable)
             {
                 hp--;
+                droneAmmount -= 2;
                 invulnerable = true;
             }
         }
