@@ -24,10 +24,12 @@ public class LevelManager : MonoBehaviour
     public List<EnemyWave> waves;
     public bool levelEnded;
     private float lastWaveTime, levelTime;
+    private GameManager gameManager;
 
 
     private void Start()
     {
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         levelTime = 0.0f;
         lastWaveTime = 0.0f;
         if (waves == null)
@@ -64,6 +66,7 @@ public class LevelManager : MonoBehaviour
             if (Wave.deadEnemies >= Wave.totalSpawnedEnemies)
             {
                 levelEnded = true;
+                gameManager.NextScene();
             }
         }
     }
