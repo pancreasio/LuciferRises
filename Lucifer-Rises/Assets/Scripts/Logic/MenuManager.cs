@@ -31,6 +31,7 @@ public class MenuManager : MonoBehaviour
 
     public void StartGame()
     {
+        GameManager.score = 0;
         gameManager.NextScene();
     }
 

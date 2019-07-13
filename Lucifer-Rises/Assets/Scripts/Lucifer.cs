@@ -221,4 +221,19 @@ public class Lucifer : MonoBehaviour
             droneAmmount += 2;
         }
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.transform.tag == "Enemy")
+        {
+            hp--;
+            droneAmmount -= 2;
+            invulnerable = true;
+            GameManager.score -= 200;
+        }
+        else
+        {
+            Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>());
+        }
+    }
 }

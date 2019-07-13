@@ -50,8 +50,7 @@ public class Wave : MonoBehaviour
     }
 
     private void Update()
-    {
-        
+    {        
         if (waypointNames != null && !listAcquired)
         {
             actualWaypoints.Clear();

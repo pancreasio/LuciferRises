@@ -29,16 +29,22 @@ public class GameManager : MonoBehaviour
 
     public void ReloadScene()
     {
+        Wave.deadEnemies = 0;
+        Wave.totalSpawnedEnemies = 0;
         SceneManager.LoadScene(currentScene.buildIndex);
     }
 
     public void NextScene()
     {
+        Wave.deadEnemies = 0;
+        Wave.totalSpawnedEnemies = 0;
         SceneManager.LoadScene(currentScene.buildIndex + 1);
     }
 
     public void GameOver()
     {
+        Wave.deadEnemies = 0;
+        Wave.totalSpawnedEnemies = 0;
         SceneManager.LoadScene(3);
         currentScene = SceneManager.GetSceneByBuildIndex(3);
     }
@@ -66,6 +72,8 @@ public class GameManager : MonoBehaviour
 
     public void Retry()
     {
+        Wave.deadEnemies = 0;
+        Wave.totalSpawnedEnemies = 0;
         SceneManager.LoadScene(lastPlayedLevelIndex);
         score = 0;
     }

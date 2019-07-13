@@ -704,120 +704,60 @@ MonoBehaviour:
   siWavePrefab: {fileID: 2372340788161292151, guid: 2bdc4b13a19c6a04296b8c1c08d3d142,
     type: 3}
   waves:
-  - waveType: 5
-    time: 8
-    spawnPoint: 
-    target: {fileID: 0}
-    spawned: 0
-  - waveType: 6
-    time: 14
-    spawnPoint: 
-    target: {fileID: 0}
-    spawned: 0
-  - waveType: 2
-    time: 18
-    spawnPoint: s42
-    target: {fileID: 803642832}
-    spawned: 0
   - waveType: 1
-    time: 19
-    spawnPoint: s02
-    target: {fileID: 0}
-    spawned: 0
-  - waveType: 1
-    time: 20
-    spawnPoint: s13
-    target: {fileID: 0}
-    spawned: 0
-  - waveType: 7
-    time: 26
-    spawnPoint: 
-    target: {fileID: 0}
-    spawned: 0
-  - waveType: 2
-    time: 29
-    spawnPoint: s03
-    target: {fileID: 1256734481}
-    spawned: 0
-  - waveType: 8
-    time: 34
-    spawnPoint: 
-    target: {fileID: 0}
-    spawned: 0
-  - waveType: 3
-    time: 40
-    spawnPoint: s23
-    target: {fileID: 616208787}
-    spawned: 0
-  - waveType: 4
-    time: 41
-    spawnPoint: 
-    target: {fileID: 0}
-    spawned: 0
-  - waveType: 0
-    time: 41
-    spawnPoint: s01
-    target: {fileID: 0}
-    spawned: 0
-  - waveType: 2
-    time: 45
-    spawnPoint: s42
-    target: {fileID: 803642832}
-    spawned: 0
-  - waveType: 0
-    time: 46
-    spawnPoint: s41
-    target: {fileID: 0}
-    spawned: 0
-  - waveType: 2
-    time: 46
-    spawnPoint: s02
-    target: {fileID: 1256734481}
-    spawned: 0
-  - waveType: 9
-    time: 46
-    spawnPoint: s01
-    target: {fileID: 0}
-    spawned: 0
-  - waveType: 11
-    time: 62
-    spawnPoint: 
-    target: {fileID: 0}
-    spawned: 0
-  - waveType: 3
-    time: 62
-    spawnPoint: s43
-    target: {fileID: 543006535}
-    spawned: 0
-  - waveType: 6
-    time: 70
-    spawnPoint: 
-    target: {fileID: 0}
-    spawned: 0
-  - waveType: 3
-    time: 62
-    spawnPoint: s03
-    target: {fileID: 351506468}
-    spawned: 0
-  - waveType: 2
-    time: 80
-    spawnPoint: s23
-    target: {fileID: 616208787}
-    spawned: 0
-  - waveType: 0
-    time: 80
+    time: 2
     spawnPoint: s00
     target: {fileID: 0}
     spawned: 0
-  - waveType: 2
-    time: 81
-    spawnPoint: s03
-    target: {fileID: 351506468}
+  - waveType: 1
+    time: 2.5
+    spawnPoint: s01
+    target: {fileID: 0}
     spawned: 0
-  - waveType: 2
-    time: 81
+  - waveType: 1
+    time: 3
+    spawnPoint: s02
+    target: {fileID: 0}
+    spawned: 0
+  - waveType: 1
+    time: 3.5
+    spawnPoint: s03
+    target: {fileID: 0}
+    spawned: 0
+  - waveType: 1
+    time: 4
+    spawnPoint: s13
+    target: {fileID: 0}
+    spawned: 0
+  - waveType: 1
+    time: 4.5
+    spawnPoint: s23
+    target: {fileID: 0}
+    spawned: 0
+  - waveType: 1
+    time: 5
+    spawnPoint: s33
+    target: {fileID: 0}
+    spawned: 0
+  - waveType: 1
+    time: 5.5
     spawnPoint: s43
-    target: {fileID: 543006535}
+    target: {fileID: 0}
+    spawned: 0
+  - waveType: 1
+    time: 6
+    spawnPoint: s42
+    target: {fileID: 0}
+    spawned: 0
+  - waveType: 1
+    time: 6.5
+    spawnPoint: s41
+    target: {fileID: 0}
+    spawned: 0
+  - waveType: 1
+    time: 7
+    spawnPoint: s40
+    target: {fileID: 0}
     spawned: 0
   scoreText: {fileID: 1892782520}
   levelEnded: 0
@@ -2204,6 +2144,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1105188501}
+  - component: {fileID: 1105188502}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -2219,12 +2160,26 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1105188500}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.38825947, y: 0.5637134, z: 0.14935228}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1105188502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105188500}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23afbdd4d13789641afa1b2cb11b1c72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentScene:
+    m_Handle: 0
 --- !u!1 &1188018283 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 44188cdc983cb8349aef94b7f1ed21a4,
