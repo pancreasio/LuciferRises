@@ -9,7 +9,7 @@ public class Lucifer : MonoBehaviour
     private float inputX, inputY, fireClock, iClock, intermitentClock;
     private bool invulnerable;
     public int droneAmmount, maxHP;
-    private int  hp;
+    private int hp;
     public GameObject bullet, drone1, drone2, drone3, drone4, drone5, drone6, droneExplosion;
     private GameObject model;
     public Image healthbar;
@@ -44,7 +44,7 @@ public class Lucifer : MonoBehaviour
         }
 
         if (invulnerable)
-        {            
+        {
             iClock += Time.deltaTime;
             intermitentClock += Time.deltaTime;
             if (intermitentClock >= 0.1f)
@@ -119,7 +119,7 @@ public class Lucifer : MonoBehaviour
             fireClock = 0f;
         }
 
-        if (Input.GetKeyDown(KeyCode.K) && droneAmmount >=2)
+        if (Input.GetKeyDown(KeyCode.K) && droneAmmount >= 2)
         {
             DetonateDrones();
         }
@@ -226,10 +226,13 @@ public class Lucifer : MonoBehaviour
     {
         if (collision.transform.tag == "Enemy")
         {
-            hp--;
-            droneAmmount -= 2;
-            invulnerable = true;
-            GameManager.score -= 200;
+            if (!invulnerable)
+            {
+                hp--;
+                droneAmmount -= 2;
+                invulnerable = true;
+                GameManager.score -= 200;
+            }
         }
         else
         {

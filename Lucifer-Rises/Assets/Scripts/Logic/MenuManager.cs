@@ -16,6 +16,7 @@ public class MenuManager : MonoBehaviour
         {
             scoreText.text = "Final Score: " + GameManager.score;
         }
+        Cursor.visible = true;
     }
 
 

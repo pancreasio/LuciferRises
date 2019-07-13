@@ -49,12 +49,12 @@ public class LevelManager : MonoBehaviour
         }
         gameManager.UpdateCurrent();
         gameManager.SetRetryLevel();
+        Cursor.visible = false;
     }
 
     private void Update()
     {
         levelTime += Time.deltaTime;
-
         scoreText.text = "score: " + GameManager.score;
 
         foreach (EnemyWave waveCount in waves)
@@ -73,11 +73,6 @@ public class LevelManager : MonoBehaviour
                 levelEnded = true;
                 gameManager.NextScene();
             }
-        }
-
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            gameManager.NextScene();
         }
     }
 
